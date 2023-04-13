@@ -1,4 +1,5 @@
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, TextField, useTheme } from '@mui/material';
+import { tokens } from "../../theme";
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -30,12 +31,14 @@ const userSchema = yup.object().shape({
 
 const Form = () => {
     const isNonMobile = useMediaQuery("(min-width:600px)");
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
 
     const handleFormSubmit = (values) => {
         console.log(values);
     }
     return (
-        <Box m="20px">
+        <Box m="10px">
             <Header title="CREATE USER" subtitle="Create a New User Profile"/>
             <Formik
                 onSubmit={handleFormSubmit}
@@ -46,10 +49,11 @@ const Form = () => {
                     <form onSubmit={handleSubmit}>
                         <Box 
                             display="grid" 
-                            gap="30px" 
+                            gap="15px" 
                             gridTemplateColumns="repeat(4, minmax(0,1fr))"
                             sx={{
-                                "& > div": { gridColumn: isNonMobile ? undefined : "span 4"}
+                                "& > div": { gridColumn: isNonMobile ? undefined : "span 4"},
+                                "& .MuiInputLabel-root.Mui-focused": {color: colors.greenAccent[500]}
                             }}
                         >
                             <TextField

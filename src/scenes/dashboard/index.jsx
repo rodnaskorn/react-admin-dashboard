@@ -24,7 +24,7 @@ const Dashboard = () => {
       
       <Box>
         <Button
-          sx={{ backgroundColor: colors.blueAccent[700], color: colors.grey[100], fontSize: "14px", fontWeight:"bold", padding: "10px 20px"}}
+          sx={{ backgroundColor: colors.blueAccent[700],color: colors.grey[100], fontSize: "14px", fontWeight:"bold", padding: "10px 20px"}}
         >
           <DownloadOutlinedIcon sx={{ mr: "10px"}}/>
           Download Reports
@@ -172,7 +172,7 @@ const Dashboard = () => {
           <Box display="flex" flexDirection="column" alignItems="center" mt="25px">
             <ProgressCircle size="125"/>
             <Typography variant="h5" color={colors.greenAccent[500]} sx={{mt:"15px"}}>$48,352 revenue generated</Typography>
-            <Typography variant="h5" fontWeight="600">Includes extra misc expenditures and costs</Typography>
+            <Typography variant="h6" fontWeight="400" textAlign="center">Includes extra misc expenditures and costs</Typography>
           </Box>
         </Box>
         <Box
@@ -191,7 +191,7 @@ const Dashboard = () => {
           backgroundColor={colors.primary[400]}
           p="30px"
         >
-          <Typography variant="h5" fontWeight="600" sx={{mb: "15px"}}>Sales Quantity</Typography>
+          <Typography variant="h5" fontWeight="600" sx={{mb: "15px"}}>Traffic Origin</Typography>
           <Box height="200px">
             <GeographyChart isDashboard={true}/>
           </Box>

@@ -59,7 +59,7 @@ const LineChart = ({ isDashboard = false}) => {
             reverse: false
         }}
         yFormat=" >-.2f"
-        curve="natural"
+        curve="cardinal"
         axisTop={null}
         axisRight={null}
         axisBottom={{
@@ -89,6 +89,7 @@ const LineChart = ({ isDashboard = false}) => {
         pointBorderColor={{ from: 'serieColor', modifiers: [] }}
         pointLabelYOffset={-12}
         useMesh={true}
+        animate={false}
         legends={[
             {
                 anchor: 'bottom-right',
